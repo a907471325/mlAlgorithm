@@ -4,12 +4,13 @@ import pandas as pd
 from sklearn import tree
 from sklearn import preprocessing
 from sklearn.externals.six import StringIO
+from sqlalchemy.sql.expression import false
 
 # Read in the csv file and put features into list of dict and list of class label
 # allElectronicsData = open(r'F:\BaiduNetdiskDownload\代码与素材\代码与素材(1)\01DTree\AllElectronics.csv', 'rt')
 allElectronicsData = open(r'AllElectronics.csv', 'rt')
-# allData = pd.read_csv('AllElectronics.csv')
-# print(allElectronicsData)
+allData = pd.read_csv('AllElectronics.csv')
+print(allData)
 
 reader = csv.reader(allElectronicsData)
 headers = next(reader)
@@ -27,9 +28,11 @@ for row in reader:
 print(featureList)
  
 # Vetorize features
-vec = DictVectorizer()
-dummyX = vec.fit_transform(featureList) .toarray()
- 
+#添加 sparse=False转化后的矩阵为非稀疏矩阵，不用讲转化结果toarray了
+vec = DictVectorizer(sparse=False)
+
+dummyX = vec.fit_transform(featureList)
+
 print("dummyX: " + str(dummyX))
 print(vec.get_feature_names())
  
