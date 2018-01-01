@@ -6,7 +6,8 @@ from sklearn import preprocessing
 from sklearn.externals.six import StringIO
 
 # Read in the csv file and put features into list of dict and list of class label
-allElectronicsData = open(r'F:\BaiduNetdiskDownload\代码与素材\代码与素材(1)\01DTree\AllElectronics.csv', 'rt')
+# allElectronicsData = open(r'F:\BaiduNetdiskDownload\代码与素材\代码与素材(1)\01DTree\AllElectronics.csv', 'rt')
+allElectronicsData = open(r'AllElectronics.csv', 'rt')
 # allData = pd.read_csv('AllElectronics.csv')
 # print(allElectronicsData)
 
