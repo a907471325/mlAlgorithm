@@ -62,8 +62,12 @@ newRowX[0] = 1
 newRowX[2] = 0
 print("newRowX: " + str(newRowX))
      
-print(newRowX.shape)   
+print(newRowX.shape)
+print(type(newRowX)   )
+#predictedY = clf.predict(newRowX)
 predictedY = clf.predict(newRowX.reshape(1,-1))
+print((newRowX.reshape(1,-1).shape))
+
 print("predictedY: " + str(predictedY))
 
 
